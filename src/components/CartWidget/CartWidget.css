@@ -1,0 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
+
+.cartWidget{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.fa-cart-shopping  {
+   font-size: 20px;
+   margin-right: 5px;
+    color: white;
+}
+.cartWidget h5{
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
+    border-radius: 50%;
+    font-size: 10px;
+    color: yellow;
+}
