@@ -17,10 +17,10 @@ class Card extends React.Component {
 
                 <div class="card mx-auto cardTitle">
                 <FontAwesomeIcon icon={faCartShopping} />
-            <h5>Card Title </h5>
+            <h5>{this.props.title}</h5>
         </div>
-        <div class="cardFooter">
-        <h5>Card Footer </h5>
+        <div class="cardDescription">
+        <h5>{this.props.description}</h5>
         </div>
          </div>
             

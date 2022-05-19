@@ -18,7 +18,13 @@ function App() {
       
         <img src={logo} className="App-logo" alt="logo" />
         {/* <ItemListContainer/> */}
-       <Card/>
+       <Card
+          title="Iphone 12"
+          description="Descripcion de Iphone 12"
+          leftColor="#A74CF2"
+          rightColor="#617BFB"
+
+       />
       
       </header>
     </div>
