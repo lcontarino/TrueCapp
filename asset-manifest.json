@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/TrueCapp/static/css/main.6941083a.css",
-    "main.js": "/TrueCapp/static/js/main.f08faed6.js",
+    "main.js": "/TrueCapp/static/js/main.c4ba0e5c.js",
     "static/js/787.a03f782f.chunk.js": "/TrueCapp/static/js/787.a03f782f.chunk.js",
     "static/media/82-800x600.jpg": "/TrueCapp/static/media/82-800x600.d42681ccf5eb19505fb6.jpg",
     "index.html": "/TrueCapp/index.html",
     "main.6941083a.css.map": "/TrueCapp/static/css/main.6941083a.css.map",
-    "main.f08faed6.js.map": "/TrueCapp/static/js/main.f08faed6.js.map",
+    "main.c4ba0e5c.js.map": "/TrueCapp/static/js/main.c4ba0e5c.js.map",
     "787.a03f782f.chunk.js.map": "/TrueCapp/static/js/787.a03f782f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6941083a.css",
-    "static/js/main.f08faed6.js"
+    "static/js/main.c4ba0e5c.js"
   ]
 }
