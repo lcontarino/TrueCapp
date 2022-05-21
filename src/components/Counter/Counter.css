@@ -1,0 +1,49 @@
+.counterBody{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
+
+.buttonsWrapper{
+  background-color: aqua;
+  justify-items: center;
+  align-items: center;
+    width: 100px;
+    height: 30px;
+
+}
+
+.addCount{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.counterBtns{
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    width: 40px;
+    height: 40px;
+    
+    padding: 1px;
+    margin: 5px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.fa-circle-plus  {
+    font-size: 20px;
+     color: green;
+      }
+
+.fa-circle-plus:hover  {
+        cursor: pointer;
+      }
+
+ .fa-circle-minus  {
+    font-size: 20px;
+     color: red;
+ }
+ .fa-circle-minus:hover  {
+    cursor: pointer;
+ }

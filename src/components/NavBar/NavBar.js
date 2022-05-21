@@ -3,7 +3,7 @@ import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = () => {
     return (
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-purple-900 ">
             <div class="container-fluid">
                 <h3 class="navbar-brand" href="#">TrueCapp </h3>
 
