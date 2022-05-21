@@ -3,7 +3,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import './itemsListContainer.css'
 import {useState, useEffect} from 'react'
 import {getProducts} from '../../asyncmock'
-import CardImage from '../../img/82-800x600.jpg'
+//import CardImage from '../../img/82-800x600.jpg'
 
 const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState([])
@@ -22,13 +22,13 @@ const ItemListContainer = ({greeting}) => {
             <div className="cardBody">
             
             <div className="cardImg" >
-            <img src={products.map(product => product.img)}></img>
+            <img src={products.map(product => product.img)} alt="productImage" ></img>
             </div>
             <div className='cardInfo'>
                 <div className='cardTitle'>
                 {products.map(product => <p key={product.id}>{product.name}</p>)}
                 </div>
-            <div class="cardDescription">
+            <div className="cardDescription">
             <h5>{products.map(product => <p key={product.id}>{product.description}</p>)}</h5>
             </div>
             </div>
