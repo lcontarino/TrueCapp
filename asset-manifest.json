@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/TrueCapp/static/css/main.161855e1.css",
-    "main.js": "/TrueCapp/static/js/main.0d225df4.js",
+    "main.css": "/TrueCapp/static/css/main.6941083a.css",
+    "main.js": "/TrueCapp/static/js/main.f08faed6.js",
     "static/js/787.a03f782f.chunk.js": "/TrueCapp/static/js/787.a03f782f.chunk.js",
-    "static/media/iphone-12.png": "/TrueCapp/static/media/iphone-12.15c3ba9588c18e56a788.png",
-    "static/media/logo.PNG": "/TrueCapp/static/media/logo.cb0802f0fb8dce4e31e2.PNG",
+    "static/media/82-800x600.jpg": "/TrueCapp/static/media/82-800x600.d42681ccf5eb19505fb6.jpg",
     "index.html": "/TrueCapp/index.html",
-    "main.161855e1.css.map": "/TrueCapp/static/css/main.161855e1.css.map",
-    "main.0d225df4.js.map": "/TrueCapp/static/js/main.0d225df4.js.map",
+    "main.6941083a.css.map": "/TrueCapp/static/css/main.6941083a.css.map",
+    "main.f08faed6.js.map": "/TrueCapp/static/js/main.f08faed6.js.map",
     "787.a03f782f.chunk.js.map": "/TrueCapp/static/js/787.a03f782f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.161855e1.css",
-    "static/js/main.0d225df4.js"
+    "static/css/main.6941083a.css",
+    "static/js/main.f08faed6.js"
   ]
 }
