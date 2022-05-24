@@ -60,9 +60,16 @@
     background-color: red;
 }
 
-.navbar-brand h3{
+.navbar{
     font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
-    color: red;
+    font-size: 15px;
+    font-weight: 700;
+    width: 100% !important;
+}
+.navbar-brand h3 {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
     line-height: 20px;
+
 }

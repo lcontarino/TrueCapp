@@ -1,49 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
+
 .counterBody{
     display: flex;
-    flex-direction: row;
-    height: auto;
+    align-content: center;
+    width:50px;
+    height: 50px;
+    background-color: wheat;
+    border: 1px solid black;
+}
+
+.counterBody p{
+    display: flex;
+   height: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700 ;
 }
 
 .buttonsWrapper{
-  background-color: aqua;
-  justify-items: center;
-  align-items: center;
-    width: 100px;
-    height: 30px;
-
-}
-
-.addCount{
-    margin-left: 5px;
-    margin-right: 5px;
-}
-.counterBtns{
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    align-content: center;
-    width: 40px;
+  display:flex;
+  flex-direction: column;
+     width: 20px;
     height: 40px;
-    
-    padding: 1px;
-    margin: 5px;
-    background-color: black;
-    border-radius: 50%;
+
 }
 
-.fa-circle-plus  {
+.addCount p{
+    height: 20px;
+    background-color:red;
+}
+
+.counterBtns{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    
+}
+
+.fa-caret-up  {
     font-size: 20px;
-     color: green;
+     color: black;
       }
 
-.fa-circle-plus:hover  {
+.fa-caret-up:hover  {
         cursor: pointer;
       }
 
- .fa-circle-minus  {
+ .fa-caret-down  {
     font-size: 20px;
      color: red;
  }
- .fa-circle-minus:hover  {
+ .fa-caret-down:hover  {
     cursor: pointer;
  }

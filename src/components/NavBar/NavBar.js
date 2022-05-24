@@ -3,9 +3,9 @@ import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-purple-900 ">
+        <nav className="navbar navbar-expand-lg navbar-light bg-white">
             <div className="container-fluid">
-                <h3 className="navbar-brand" href="#">TrueCapp </h3>
+                <div className="navbar-brand" href="#"><h3>TrueCapp</h3></div>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

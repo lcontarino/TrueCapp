@@ -1,6 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
 .App {
   text-align: center;
   justify-items: center;
+  background-color: #f6f6f6;
 }
 
 .App-logo {
