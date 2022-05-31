@@ -1,14 +1,13 @@
 const products = [
     {
-    id: '1',
-    name: 'Nike Air Max 270',
-    price: 1000,
-    category: 'phones',
-    img: 'https://images.restocks.net/products/AO4971-002/nike-air-max-270-react-bauhaus-2-1000.png',
-    stock: 25,
-    description: 'Nike Air Max 270 Description '
-}
- ,
+        id: '2',
+        name: 'Nike Air Max 70',
+        price: 35000,
+        category: 'shoes',
+        img: './img/',
+        stock: 5,
+        description: 'Description Nike Air Max 70 '
+    },
   {
       id: '2',
       name: 'Zapatillas Nike Air 90',
