@@ -17,7 +17,7 @@ const App = () => {
             {/* <Route path='/category/:categoryId' element={<ItemListContainer greeting="Productos filtrados por categoria"/>}/> */}
             <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
             <Route path='/products' element={<h1>Products</h1>}/>
-            <Route path='*' element={<h1>PAGE NOT FOUND 404</h1>} />
+            {/* <Route path='*' element={<h1>PAGE NOT FOUND 404</h1>} /> */}
           </Routes>
         </BrowserRouter>
     </div>

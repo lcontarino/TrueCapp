@@ -15,7 +15,7 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav">
                         <li className="nav-item rounded bg-indigo-800 nav-link">
-                            <Link to='/' >Home</Link>
+                            <Link to='/TrueCapp' >Home</Link>
                         </li>
                         <li className="nav-item rounded bg-indigo-800 nav-link">
                             <Link to='/products'>Productos</Link>
