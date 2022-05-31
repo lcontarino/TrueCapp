@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
-import { faCircleMinus } from '@fortawesome/free-solid-svg-icons'
+import { faSquarePlus } from '@fortawesome/free-solid-svg-icons'
+import { faSquareMinus } from '@fortawesome/free-solid-svg-icons'
 import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import './Counter.css'
@@ -20,11 +20,14 @@ const Counter = () => {
         console.log(number)
     };
     return (
-        <div className="container rounded counterBody">
-             <p className="addCount">{number}</p>
+        <div className="container rounded counterBody bg-indigo-800">
+             
             <div className="buttonsWrapper">
-            <btn type="button"  onClick={increment}><FontAwesomeIcon icon={faCaretUp} /></btn>
-            <btn type="button"  onClick={decrement}><FontAwesomeIcon icon={faCaretDown} /></btn>
+            <button className="btn btn-sm"  onClick={decrement}><FontAwesomeIcon icon={faSquareMinus} /></button>
+            <p className="addCount">{number}</p>
+            <button className="btn btn-sm"  onClick={increment}><FontAwesomeIcon icon={faSquarePlus} /></button>
+            
+           
                
                 
             </div>

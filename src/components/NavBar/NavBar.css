@@ -73,3 +73,23 @@
     line-height: 20px;
 
 }
+
+.nav-link a {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-item{
+    align-content: center;
+    justify-items: center;
+    width: auto;
+    height: 35px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    
+  
+    
+}

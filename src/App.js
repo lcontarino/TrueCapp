@@ -1,30 +1,25 @@
-//import logo from '../src/img/logo.PNG';
+import React, { useState } from 'react'
 import './App.css';
-import '../src/components/NavBar/NavBar.css';
-
 import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+// import ItemCount from './components/ItemCount/ItemCount';
+// import MercadoLibre from './components/MercadoLibre/MercadoLibre';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import ItemListContainer from './components/itemsListContainer/itemsListContainer'
-import Counter from './components/Counter/Counter';
-
-
-
-function App() {
+const App = () => {
   return (
-    
-
     <div className="App">
-      
-      <NavBar />
-      <div className='container'>
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <ItemListContainer greeting={"Productos"} />
-        
-        
-      </div>  
-
-
-
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<ItemListContainer greeting="Todos los Productos"/>}/>
+            {/* <Route path='/category/:categoryId' element={<ItemListContainer greeting="Productos filtrados por categoria"/>}/> */}
+            <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
+            <Route path='/about' element={<h1>About</h1>}/>
+            <Route path='*' element={<h1>PAGE NOT FOUND 404</h1>} />
+          </Routes>
+        </BrowserRouter>
     </div>
   );
 }
