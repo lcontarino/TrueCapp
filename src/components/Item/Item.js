@@ -17,6 +17,7 @@ const Item = ({id, name,description, price,img, handlePage}) => {
                                     <div className='cardTitle'>
                                         <p> {name}</p>
                                     </div>
+                                    
                                     <div className='descriptionText'>
                                     <p>{description}</p>
                                     <li></li>
