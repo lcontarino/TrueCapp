@@ -17,7 +17,7 @@ const products = [
   {
       id: '2',
       code:'20648411022',
-      name: 'Zapatillas Nike Air 90',
+      name: 'Zapatillas Nike Air Max 90',
       price: 35000,
       category: 'shoes',
       img: Image02,
