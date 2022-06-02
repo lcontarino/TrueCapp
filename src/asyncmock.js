@@ -1,5 +1,5 @@
 import Image1 from './img/akai_mpk225.png';
-import Image02 from '../public/img/'
+import Image02 from './img/airmax90.png'
 const products = [
     {
         id: '1',
