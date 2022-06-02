@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 /*TAILWIND BG COLORS*/
 .bg-black { background-color: #000; }
 .bg-white { background-color: #fff; }
@@ -55,35 +56,44 @@
 .bg-blue-900   { background-color: #2a4365; }
 
 .bg-purple-900 { background-color: #44337a; }
-
+.Carditem{
+    display: flex;
+    flex-direction: row;
+}
 .cardBody{
     display: flex;
     flex-direction: column;
     width: 700px;
-    height: 250px;
+    height: 300;
     background-color: white;
     align-items: center;
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 5px;
     box-shadow: 0px 20px 25px -10px rgba(0,0,0,0.5);
+    cursor: pointer;
+	transition: 0.3s all ease-in-out;
+}
+
+.cardBody:hover{
+    box-shadow: 2px 2px 15px #563d7c;
+	transform: scaleX(1.02) ;
 }
 
 .cardInfo{
     display: flex;
     flex-direction: row;
     align-items: center;
-    width:auto;
+    width: auto;
     margin: 5px;
  
 }
 .cardTitle p{
     width: 300px;
     background-color: gray;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 16px;
     display: block;
@@ -93,7 +103,9 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
-.cardInfo img{
+.cardInfoImg{
+    border:1px solid black;
+    width: 300px;
     margin-right: 25px;
     margin-left:5px
     }
@@ -105,11 +117,9 @@
 
 
 .descriptionText {
-    
+    padding-top: 5px;   
     height: 120px;
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
-    font-size: 12px;
+    font-family: "Poppins", sans-serif;
     text-transform:uppercase;
     background-color: gray;
     border-bottom-left-radius: 15px;
@@ -118,12 +128,24 @@
  
 }
 
-.descriptionText p{
-    font-size: 15px;
-    margin-bottom: 0px;
+.descriptionText p {
+    
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 5px;
 }
-
-.basketWrapper{
+.descriptionText ::marker{
+    color:rgb(255, 174, 0);
+}
+.descriptionText li {
+    text-transform: capitalize;
+    color:white;
+    float: left;
+    font-size: 12px;
+    line-height: 20px;
+    margin-left: 15px;
+    }
+.basketWrapper {
     display: flex;
     flex-direction: row;
 }
@@ -131,36 +153,44 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 200px;
-    height: 40px;
+    align-items: center;
+    width: 120px;
+    height: 33px;
     white-space: nowrap;
     align-content: center;
     margin-left: 5px;
     }
     .cardExplore-btn p{
+        margin-top:15px;
         margin-left:5px;
         font-size: 12px;
         font-weight: 700;
         color:white;
     }
     
-    .btn-widget-shopping  {
-        font-size: 20px;
+    .widget-shopping-icon  {
+        font-size: 15px;
         margin-right: 5px;
         color: white;
+       
      }
 
-     .counterWrapper{
-         display: flex;
-         flex-direction: row;
-         align-items: center;
-         justify-content: center;
-         justify-items: center;
-         width: 200px;
-         height: auto;
-         margin-bottom: 10px;
-     }
 .detailLink{
+    
+    font-family: "Poppins", sans-serif;
+    margin-left: 5px;
+    color: black;
     text-decoration: none;
     white-space: nowrap;
+    padding: 5px;
 }
+
+.combo-action{
+    background-color: #c6ff00;
+    color: #282828;
+    font-size: .7em;
+}
+.combo-action:hover{
+    background-color: #efefef
+}
+

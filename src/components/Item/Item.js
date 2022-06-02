@@ -6,39 +6,47 @@ import './Item.css'
 
 
 
-const Item = ({id, name,description, price,img, handlePage}) => {
+
+const Item = ({id, name,description,tag1,tag2,tag3, price,img, handlePage}) => {
     return (
-        <div className="CardItem">
+        
+            
+        <div className="cardItem col-lg-12 ">
             <div className="cardBody rounded float-left">
                             <div className='cardInfo'>
-                                <img src={img} className="img-fluid rounded float-left" width="300px" alt="productImage" ></img>
-
+                                <img src={img} className="rounded cardInfoImg" width="350px" alt={name} ></img>
+                                
                                 <div className="cardDescription">
                                     <div className='cardTitle'>
-                                        <p> {name}</p>
+                                        <p>{name}</p>
                                     </div>
                                     
                                     <div className='descriptionText'>
                                     <p>{description}</p>
-                                    <li></li>
-                                   
+                                    <li>{tag1}</li>
+                                    <br></br>
+                                    <li>{tag2}</li>
+                                    <br></br>
+                                    <li>{tag3}</li>
                                     </div>
-                                </div>
                             </div>
-
-                            <div className='counterWrapper'>
+                            </div>
+                            <div className='counterWrapper align-items-center '>
                                 <Counter />
                                 <div className="btn btn-sm bg-indigo-800 cardExplore-btn ">
-                                    <FontAwesomeIcon icon={faCartShopping} className="btn-widget-shopping" />
+                                    <FontAwesomeIcon icon={faCartShopping} className="widget-shopping-icon" />
                                     <p>Add to Basket</p>
                                 </div>
-                                <Link to={`/detail/${id}`} className='detailLink'>Ver detalle</Link>
+                                
                             </div>
+                            <Link to={`/detail/${id}`} className="btn combo-btn combo-action detailLink">MAS DETALLES</Link>
                            
                         </div>
            
             
         </div>
+        
+      
     )
 }
 export default Item;

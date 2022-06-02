@@ -20,17 +20,16 @@ const Counter = () => {
         console.log(number)
     };
     return (
-        <div className="container rounded counterBody bg-indigo-800">
-             
-            <div className="buttonsWrapper">
-            <button className="btn btn-sm"  onClick={decrement}><FontAwesomeIcon icon={faSquareMinus} /></button>
-            <p className="addCount">{number}</p>
-            <button className="btn btn-sm"  onClick={increment}><FontAwesomeIcon icon={faSquarePlus} /></button>
-            
-           
-               
-                
+        <div className="counterBody  justify-content-between">
+
+            <div className="counterElement align-items-center justify-content-center" onClick={decrement}><FontAwesomeIcon icon={faSquareMinus} /></div>
+            <p className="counterElement align-items-center justify-content-center">{number}</p>
+            <div>
+
+                <div className="counterElement align-items-center justify-content-center" onClick={increment}><FontAwesomeIcon icon={faSquarePlus} /></div>
+
             </div>
+
         </div>
     )
 

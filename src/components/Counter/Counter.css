@@ -1,63 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
 
-.counterBody{
+.counterWrapper{
     display: flex;
-    width: 150px;
+    width: 620px;
+    background-color: rgb(255, 115, 0);
+    padding: 5px;
     flex-direction: row;
-    align-items: center;
+    margin: 5px;
     
 }
+.counterBody{
+    display: flex;
+    width: 160px;
+    height: 50px;
+    flex-direction: row;
+}
 
-.buttonsWrapper{
+.counterElement{
   display:flex;
   flex-direction: row;
-  width: 200px;
-  height: auto;
+  justify-content: space-between;
+  align-items: center;
+  width: 50px;
+  border:1px solid rgb(53, 53, 53);
+  height: 50px;
+  font-size: 25px;
+  font-weight: 500;
  
 }
 
-.buttonsWrapper p{
-    font-size: 30px;
-    width: 30px;
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 500 ;
-    color: white;
-    margin: 0px 0px;
-}
 
-.addCount {
-    -webkit-appearance: none;
-  border: none;
-  text-align: center;
-  width: 32px;
-  font-size: 16px;
-  color: #43484D;
-  font-weight: 300;
-}
-
-.counterBtns{
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    
-}
-
-.fa-caret-up  {
-    font-size: 20px;
-     color: black;
-      }
-
-.fa-caret-up:hover  {
-        cursor: pointer;
-      }
-
- .fa-caret-down  {
-    font-size: 20px;
-     color: red;
- }
- .fa-caret-down:hover  {
-    cursor: pointer;
- }
 
  .fa-square-plus{
      width: 40px;
@@ -67,12 +39,18 @@
 
  .fa-square-plus :hover{
     cursor: pointer;
-    color: red;
+    color: rgb(255, 174, 0);
 }
 
  .fa-square-minus{
-    cursor: pointer;
+    
     width: 40px;
     height: 40px;
     color:white;
+}
+
+.fa-square-minus :hover{
+
+    cursor: pointer;
+    color: rgb(255, 174, 0);
 }
