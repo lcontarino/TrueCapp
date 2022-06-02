@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/TrueCapp/static/css/main.75f0bad7.css",
-    "main.js": "/TrueCapp/static/js/main.4fb406f3.js",
+    "main.js": "/TrueCapp/static/js/main.6be95b19.js",
     "static/js/787.a03f782f.chunk.js": "/TrueCapp/static/js/787.a03f782f.chunk.js",
     "static/media/airmax90.png": "/TrueCapp/static/media/airmax90.5d5c2235ca6660bb2b12.png",
     "static/media/akai_mpk225.png": "/TrueCapp/static/media/akai_mpk225.316bf5a3a2811c9f595a.png",
     "index.html": "/TrueCapp/index.html",
     "main.75f0bad7.css.map": "/TrueCapp/static/css/main.75f0bad7.css.map",
-    "main.4fb406f3.js.map": "/TrueCapp/static/js/main.4fb406f3.js.map",
+    "main.6be95b19.js.map": "/TrueCapp/static/js/main.6be95b19.js.map",
     "787.a03f782f.chunk.js.map": "/TrueCapp/static/js/787.a03f782f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.75f0bad7.css",
-    "static/js/main.4fb406f3.js"
+    "static/js/main.6be95b19.js"
   ]
 }
