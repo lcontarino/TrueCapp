@@ -15,10 +15,13 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav">
                         <li className="nav-item rounded  nav-link">
-                            <Link to='/TrueCapp' >Home</Link>
+                            <Link to='/' >Home</Link>
                         </li>
                         <li className="nav-item rounded  nav-link">
-                            <Link to='/products'>Productos</Link>
+                            <Link to='/category/controllers'>Controllers</Link>
+                        </li>
+                        <li className="nav-item rounded  nav-link">
+                            <Link to='/category/shoes'>Shoes</Link>
                         </li>
                     </ul>
 

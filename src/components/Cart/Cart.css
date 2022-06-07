@@ -1,0 +1,30 @@
+body{
+    background-color: black;
+}
+
+.cartProduct{
+    display: flex;
+    border: 1px dotted gray;
+    border-radius: 5px;
+    justify-content: space-between;
+    padding:5px;
+    margin-bottom: 5px;
+    
+}
+
+.productName{
+    margin-right: 10px;
+}
+.productQuantity{
+    width: auto;
+    margin-right: 5px;
+}
+.productQuantityText{
+    width: 150px;
+ 
+    border: 1px solid black;
+}
+    
+.fa-shoppingCart{
+ color: red;
+}

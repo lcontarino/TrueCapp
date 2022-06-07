@@ -1,37 +1,41 @@
-import { useState } from "react"
+import './Counter.css'
+import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons'
 import { faSquareMinus } from '@fortawesome/free-solid-svg-icons'
-import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import './Counter.css'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
-const Counter = () => {
-    //let number=0;
-    const [number, setNumber] = useState(0)
+const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
+    const [quantity, setQuantity] = useState(initial)
+ 
+    console.log(initial)
+    console.log(quantity)
+ 
     const increment = () => {
-        setNumber(number + 1)
-        console.log(number)
-        if (number === 5) { setNumber(5) }
-    };
+        if(quantity < stock) {
+            setQuantity(quantity+1)
+        }
+    }
+ 
     const decrement = () => {
-        setNumber(number - 1)
-        if (number === 0) { setNumber(0) }
-        console.log(number)
-    };
+        if(quantity > 1) {
+            setQuantity(quantity - 1)
+        }     
+    }
+
     return (
-        <div className="counterBody  justify-content-between">
+        <div className='counterWrapper  justify-content-between bg-indigo-900 p-2'>
+            <button className="counterElement align-items-center justify-content-center" onClick={decrement}><FontAwesomeIcon icon={faSquareMinus} /></button>
+            <h4 className='counterElement align-items-center justify-content-center text-white'>{quantity}</h4>
+            <button className="counterElement align-items-center justify-content-center" onClick={increment}><FontAwesomeIcon icon={faSquarePlus} /></button>
 
-            <div className="counterElement align-items-center justify-content-center" onClick={decrement}><FontAwesomeIcon icon={faSquareMinus} /></div>
-            <p className="counterElement align-items-center justify-content-center">{number}</p>
             <div>
-
-                <div className="counterElement align-items-center justify-content-center" onClick={increment}><FontAwesomeIcon icon={faSquarePlus} /></div>
-
+                <button className="btn btn-sm bg-indigo-800 cardExplore-btn" onClick={() => onAdd(quantity)}>
+                    <FontAwesomeIcon icon={faCartShopping} className="widget-shopping-icon" />
+                    <p> Agregar al carrito </p></button>
             </div>
-
         </div>
     )
 
 }
-export default Counter;
+export default ItemCount

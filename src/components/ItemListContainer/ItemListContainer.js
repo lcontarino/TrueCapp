@@ -1,29 +1,50 @@
+import './ItemListContainer.css'
 import { useState, useEffect } from 'react'
 import { getProducts } from '../../asyncmock'
-import ItemList from '../ItemList/ItemList';
-//import CardImage from '../../img/82-800x600.jpg'
+import ItemList from '../ItemList/ItemList'
+import { useParams } from 'react-router-dom'
+import { getProductsByCategory } from '../../asyncmock'
 
-const ItemListContainer = ({ greeting,handlePage}) => {
+const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    const { categoryId } = useParams()
 
     useEffect(() => {
-        getProducts().then(response => {
-            setProducts(response)
-        })
-    }, [])
-    console.log('Antes de Montar')
+        setLoading(true)
 
-    return (
+        if(!categoryId) {
+            getProducts().then(response => {
+                setProducts(response)
+            }).catch(error => {
+                console.log(error)
+            }).finally(() => {
+                setLoading(false)
+            })
+        } else {
+            getProductsByCategory(categoryId).then(response => {
+                setProducts(response)
+            }).catch(error => {
+                console.log(error)
+            }).finally(() => {
+                setLoading(false)
+            })
+        }
+    }, [categoryId])
 
-        <div className='container'>
-            
-            <h1>{greeting}</h1>
-            
-            
-                            <ItemList products={products}handlePage={handlePage}/>
-                        
-                 
+    if(loading) {
+        return <h1>Loading...</h1>
+    }
 
+    return(
+        <div className='ItemListContainer'>
+            <h1>{ greeting }</h1>
+            { 
+                products.length > 0 
+                    ? <ItemList products={products} />
+                    : <h2>No hay productos</h2>
+                }
         </div>
     )
 }

@@ -79,7 +79,7 @@
 
 .cardBody:hover{
     box-shadow: 2px 2px 15px #563d7c;
-	transform: scaleX(1.02) ;
+	transform: translatey(10px)  ;
 }
 
 .cardInfo{
@@ -145,6 +145,18 @@
     line-height: 20px;
     margin-left: 15px;
     }
+.cardFooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 620px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 5px;
+    flex-direction: row;
+    margin: 5px;
+    
+}
 .basketWrapper {
     display: flex;
     flex-direction: row;
@@ -154,11 +166,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 120px;
+    width: 150px;
     height: 33px;
     white-space: nowrap;
     align-content: center;
-    margin-left: 5px;
+    
     }
     .cardExplore-btn p{
         margin-top:15px;
@@ -176,9 +188,9 @@
      }
 
 .detailLink{
-    
     font-family: "Poppins", sans-serif;
     margin-left: 5px;
+    height: 32px;
     color: black;
     text-decoration: none;
     white-space: nowrap;

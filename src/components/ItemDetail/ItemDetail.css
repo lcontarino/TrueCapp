@@ -57,6 +57,8 @@
 
 .bg-purple-900 { background-color: #44337a; }
 
+.bg-lime{ background-color: #c6ff00;}
+
 .detailWrapper{
     display: flex;
   
@@ -82,3 +84,15 @@
     font-family: 'Titillium Web', sans-serif;
     color:black;
     font-weight: 700;}
+
+    .CardItem img{
+        width: 550px;
+    }
+
+    .checkOut{
+        height: 50px;
+        border:1px dotted black;
+        border-radius: 5px;
+        padding: 5px;
+        text-decoration: none;
+    }

@@ -2,18 +2,21 @@
 
 .counterWrapper{
     display: flex;
-    width: 620px;
-    background-color: rgb(255, 115, 0);
-    padding: 5px;
+    
+    justify-content: space-between;
+  
     flex-direction: row;
     margin: 5px;
+    padding: 5px;
     
 }
 .counterBody{
     display: flex;
-    width: 160px;
-    height: 50px;
     flex-direction: row;
+    align-items: center;
+    width: 325px;
+    height: auto;
+    
 }
 
 .counterElement{
@@ -34,7 +37,7 @@
  .fa-square-plus{
      width: 40px;
      height: 40px;
-     color: white;
+     color: black;
  }
 
  .fa-square-plus :hover{
@@ -46,7 +49,7 @@
     
     width: 40px;
     height: 40px;
-    color:white;
+    color:black;
 }
 
 .fa-square-minus :hover{
