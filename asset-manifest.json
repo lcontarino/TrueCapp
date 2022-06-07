@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/TrueCapp/static/css/main.75f0bad7.css",
-    "main.js": "/TrueCapp/static/js/main.6be95b19.js",
+    "main.css": "/TrueCapp/static/css/main.b1797bfb.css",
+    "main.js": "/TrueCapp/static/js/main.2ae83801.js",
     "static/js/787.a03f782f.chunk.js": "/TrueCapp/static/js/787.a03f782f.chunk.js",
+    "static/media/Alesis_vMini_25_Key.png": "/TrueCapp/static/media/Alesis_vMini_25_Key.d0bb98fdc46c3a51bd5d.png",
+    "static/media/Nike_Air_Max_Air_Jordan.png": "/TrueCapp/static/media/Nike_Air_Max_Air_Jordan.10652cca1a4116529cbf.png",
     "static/media/airmax90.png": "/TrueCapp/static/media/airmax90.5d5c2235ca6660bb2b12.png",
     "static/media/akai_mpk225.png": "/TrueCapp/static/media/akai_mpk225.316bf5a3a2811c9f595a.png",
     "index.html": "/TrueCapp/index.html",
-    "main.75f0bad7.css.map": "/TrueCapp/static/css/main.75f0bad7.css.map",
-    "main.6be95b19.js.map": "/TrueCapp/static/js/main.6be95b19.js.map",
+    "main.b1797bfb.css.map": "/TrueCapp/static/css/main.b1797bfb.css.map",
+    "main.2ae83801.js.map": "/TrueCapp/static/js/main.2ae83801.js.map",
     "787.a03f782f.chunk.js.map": "/TrueCapp/static/js/787.a03f782f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.75f0bad7.css",
-    "static/js/main.6be95b19.js"
+    "static/css/main.b1797bfb.css",
+    "static/js/main.2ae83801.js"
   ]
 }
