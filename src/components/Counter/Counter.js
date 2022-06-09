@@ -24,7 +24,7 @@ const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
     }
 
     return (
-        <div className='counterWrapper  justify-content-between bg-indigo-900 p-2'>
+        <div className='counterBody'>
             <button className="counterElement align-items-center justify-content-center" onClick={decrement}><FontAwesomeIcon icon={faSquareMinus} /></button>
             <h4 className='counterElement align-items-center justify-content-center text-white'>{quantity}</h4>
             <button className="counterElement align-items-center justify-content-center" onClick={increment}><FontAwesomeIcon icon={faSquarePlus} /></button>

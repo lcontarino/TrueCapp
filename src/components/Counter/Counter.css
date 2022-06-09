@@ -2,10 +2,9 @@
 
 .counterWrapper{
     display: flex;
-    
-    justify-content: space-between;
-  
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     margin: 5px;
     padding: 5px;
     
@@ -13,9 +12,10 @@
 .counterBody{
     display: flex;
     flex-direction: row;
+    width: 350px;
     align-items: center;
-    width: 325px;
-    height: auto;
+    justify-content: space-between;
+    background-color: aliceblue;
     
 }
 

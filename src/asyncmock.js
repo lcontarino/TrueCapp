@@ -1,7 +1,11 @@
-import Image1 from './img/akai_mpk225.png';
+import Image1 from '../public/img ./img/akai_mpk225.png';
 import Image02 from './img/airmax90.png'
 import Image03 from './img/Alesis_vMini_25_Key.png'
 import Image04 from './img/Nike_Air_Max_Air_Jordan.png'
+import Image05 from './img/Iphone_X.png'
+import Image06 from './img/Macbook_rose.png'
+
+
 const products = [
     {
         id: '1',
@@ -59,7 +63,34 @@ const products = [
     tag2:'Beneficios: Amortiguación',
     tag3:'Adecuado para: Todo el día'
 },
-
+{
+    id: '5',
+    itemCode:'80848411022',
+    name: 'Iphone X',
+    price: 150000,
+    categoryId: 3,
+    category: 'phones',
+    img: Image05,
+    stock: 2,
+    description: 'Iphone X como nuevo',
+    tag1:'Pantalla 6,5 Pulgadas',
+    tag2:'Sin Detalles',
+    tag3:'Caja y Accesorios'
+},
+{
+    id: '6',
+    itemCode:'909484112022',
+    name: 'Apple Macbook Air 13.3',
+    price: 3750000,
+    categoryId: 4,
+    category: 'notebooks',
+    img: Image06,
+    stock: 2,
+    description: 'Apple Macbook Air 13.3 Chip M1 Rose Gold',
+    tag1:'Chip M1 512gb De Ssd 8gb ',
+    tag2:'Color Rosa',
+    tag3:'Peso: 1.3 Kg'
+}
 ]
 
 export const getProducts = () => {

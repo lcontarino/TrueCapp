@@ -10,8 +10,6 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
     const { addItem, getProduct } = useContext(CartContext)
 
     const handleOnAdd = (quantity) => {
-        console.log('agregue al carrito')
-        console.log(quantity)
         setQuantity(quantity)
 
         addItem({ id, name, price, quantity })
@@ -29,10 +27,6 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
             
         </div>
         
-    
-                      
-           
-
         <div className="col-md-6">
         <header className="Header">
                 <h2 className="ItemHeader">
@@ -52,7 +46,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
                 </p>
 
             </div>
-            <footer className='counterWrapper'>
+            <footer className='counterWrapper  justify-content-between bg-indigo-900 p-2'>
                 <div>
                 { quantity > 0  
                     ? <Link to='/cart' className='checkOut bg-lime'>Finalizar compra</Link> 

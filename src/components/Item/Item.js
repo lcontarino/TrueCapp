@@ -9,7 +9,7 @@ const Item = ({ id, name, description, tag1, tag2, tag3, price, img, handlePage 
         <div className="cardItem col-lg-12 ">
             <div className="cardBody rounded float-left">
                 <div className='cardInfo'>
-                    <img src={img} className="rounded cardInfoImg" width="350px" alt={name} ></img>
+                    <img src={img} className="rounded cardInfoImg mx-2" alt={name} ></img>
 
                     <div className="cardDescription">
                         <div className='cardTitle'>

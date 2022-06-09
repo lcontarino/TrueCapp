@@ -105,9 +105,11 @@
 }
 .cardInfoImg{
     border:1px solid black;
-    width: 300px;
-    margin-right: 25px;
-    margin-left:5px
+    max-width: 350px;
+    max-height: 250px;
+    height: 200px;
+    width: 320px;
+    object-fit: contain;
     }
 
 .cardDescription{

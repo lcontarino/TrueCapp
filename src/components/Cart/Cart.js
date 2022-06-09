@@ -13,6 +13,7 @@ const Cart = () => {
             <div className=" col-md-6 "> 
             <h1>Shopping Cart</h1>
             <FontAwesomeIcon className='cart-shopping ' icon={faShoppingCart} />
+      <img src='https://lcontarino.github.io/TrueCapp/static/media/carrito-de-compras-png-4647144.png'></img>
             </div>
             
         <div className="col-md-6 "> 
@@ -21,7 +22,7 @@ const Cart = () => {
             <div>
                 {cart.map(prod => {
                     return(
-                        <div key={prod.id} className="cartProduct mx-3">
+                        <div key={prod.id} className="cartProduct mx-3 rounded-3 bg-gray-200">
                              <div className="productQuantity">QTY: <span className="productQuantityText bg-indigo-800 text-light">{prod.quantity}</span></div>
                             <div className="productName" >{prod.name}</div>
                            

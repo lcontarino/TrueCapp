@@ -1,4 +1,3 @@
-import React, { useState, createContext } from 'react'
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -15,6 +14,7 @@ const App = () => {
           <NavBar />
           <Routes>
             <Route path='/' element={<ItemListContainer greeting="Todos los Productos" />} />
+            <Route path='/TrueCapp' element={<ItemListContainer greeting="Todos los Productos" />} />
             <Route path='/category/:categoryId' element={<ItemListContainer greeting="Productos filtrados por categoria" />} />
             <Route path='/detail/:productId' element={<ItemDetailContainer />} />
             <Route path='/about' element={<h1>About</h1>} />
