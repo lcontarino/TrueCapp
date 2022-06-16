@@ -1,40 +1,40 @@
 import './ItemDetail.css'
 import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import ItemCount from '../Counter/Counter'
+import ItemCount from '../ItemCount/ItemCount'
 import CartContext from '../../context/CartContext'
+import { useNotification } from '../../notification/Notification'
 
 const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
     const [quantity, setQuantity] = useState(0)
 
+    //const { setNotification } = useNotification()
+
     const { addItem, getProduct } = useContext(CartContext)
+
 
     const handleOnAdd = (quantity) => {
         setQuantity(quantity)
-
+        //setNotification('success', 'Se agrego correctamente al carrito')
         addItem({ id, name, price, quantity })
     }
 
     return (
-        <div className="row">
-            <div className="col-md-6">
-        <div className="CardItem">
-            
-            <div className='img-fluid'>
+        <div className="ItemDetailContainer">
+            <div className='row'>
+                <div className='col-md-6'>
+                <div className='img-fluid'>
                 <img src={img} alt={name} className="ItemImg"/>
             </div>
-            </div>
-            
-        </div>
-        
-        <div className="col-md-6">
-        <header className="Header">
+                </div>
+                <div className='col-md-6'>
+            <header className="Header">
                 <h2 className="ItemHeader">
                     {name}
                 </h2>
             </header>
-            <div>
-                
+            
+            <section>
                 <p className="Info">
                     Categoria: {category}
                 </p>
@@ -44,16 +44,14 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
                 <p className="Info">
                     Precio: {price}
                 </p>
-
-            </div>
-            <footer className='counterWrapper  justify-content-between bg-indigo-900 p-2'>
-                <div>
+            </section>  
+            <div className='counterWrapper  bg-indigo-900 p-2'>
                 { quantity > 0  
-                    ? <Link to='/cart' className='checkOut bg-lime'>Finalizar compra</Link> 
-                    : <ItemCount stock={stock} onAdd={handleOnAdd} initial={getProduct(id)?.quantity}/>}
-                </div>
-                
-            </footer> 
+                    ? <Link to='/cart' className='Option'>Finalizar compra</Link> 
+                    : <ItemCount stock={stock} onAdd={handleOnAdd} initial={getProduct(id)?.quantity}/>}               
+            </div> 
+            </div>        
+            
         </div>
         </div>
     )

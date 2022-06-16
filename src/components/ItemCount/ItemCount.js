@@ -3,13 +3,11 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareMinus } from '@fortawesome/free-solid-svg-icons'
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 
 const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
    const [quantity, setQuantity] = useState(initial)
-
-   console.log(initial)
-   console.log(quantity)
 
    const increment = () => {
        if(quantity < stock) {
@@ -32,7 +30,7 @@ const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
     <div>
         <button className="btn btn-sm bg-indigo-800 cardExplore-btn" onClick={() => onAdd(quantity)}>
             <FontAwesomeIcon icon={faCartShopping} className="widget-shopping-icon" />
-            <p> Agregar al carrito </p></button>
+            <p> Add to cart </p></button>
     </div>
 </div>
    )

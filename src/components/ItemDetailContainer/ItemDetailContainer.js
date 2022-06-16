@@ -2,7 +2,6 @@ import './ItemDetailContainer.css'
 import { useState, useEffect } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
-
 import { getDoc, doc } from 'firebase/firestore'
 import { db } from '../../services/firebase'
 
@@ -23,12 +22,6 @@ const ItemDetailContainer = () => {
         }).finally(() => {
             setLoading(false)
         })
-
-        // getProductsById(productId).then(response => {
-        //     setProduct(response)
-        // }).finally(() => {
-        //     setLoading(false)
-        // })
     }, [productId])
 
     if(loading) {

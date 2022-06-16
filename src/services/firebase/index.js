@@ -21,3 +21,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore (app);
 // const analytics = getAnalytics(app);
+export const collectionsName ={
+  products:'products',
+  orders:'orders'
+}

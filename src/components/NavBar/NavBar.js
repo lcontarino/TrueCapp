@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bd-navbar sticky-top">
+        <nav className="navbar navbar-expand-lg navbar-dark bd-navbar">
             <div className="container-fluid">
                 <div className="navbar-brand" href="#"><h3>TrueCapp</h3></div>
 
