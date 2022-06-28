@@ -67,10 +67,12 @@ export const NavBar = () => {
       </div>
       <div className='login_icon_wrapper'>
         <FontAwesomeIcon icon={faUserCircle} className="user_login_icon" />
-       { auth ===true
-         ? <Link to='/login'>Login</Link> 
-         : <p onClick={SignOutUser}>SignOut</p>
-       }
+        if (auth.currentUser.email){
+         <Link to='/login'>Login</Link> 
+        }
+         else
+          <p onClick={SignOutUser}>SignOut</p>}
+      
 
       {/* <p>{auth.currentUser.email}</p> */}
      {/* { auth.currentUser.email} */}

@@ -23,7 +23,7 @@ const App = () => {
             <Route path='/detail/:productId' element={<ItemDetailContainer/>} />
             <Route path='/about' element={<h1>About</h1>} />
             <Route path='/register' element={<RegisterUsers/>} />
-            <Route path='/TrueCapp/login' element={<LoginUsers/>} />
+            <Route path='/login' element={<LoginUsers/>} />
             <Route path='/cart' element={<Cart />} />
             <Route path='*' element={<h1>PAGE NOT FOUND 404</h1>} />
           </Routes>
