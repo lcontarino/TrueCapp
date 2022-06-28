@@ -2,28 +2,31 @@ import './Cart.css'
 import { useState, useContext } from "react"
 import CartContext from '../../context/CartContext'
 import CartItem from '../CartItem/CartItem'
-import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
+import {  addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
 import { db, collectionsName } from '../../services/firebase'
-import { useNotification } from '../../notification/Notification'
+import {auth} from '../../services/firebase'
+import Swal from 'sweetalert2'
+import Spinner from '../Spinner/Spinner'
 
 const Cart = () => {
     const [loading, setLoading] = useState(false)
 
     const { cart, clearCart, getTotal, getQuantity } = useContext(CartContext)  
 
-  // const { setNotification } = useNotification()
-
     const createOrder = () => {
+      
         console.log('crear orden')
         setLoading(true)
-
+        
+        const actuser = {user   :auth.currentUser.email,
+                         userid : auth.currentUser.uid}
+       
         const objOrder = {
+            sendAdress:{
+                adress1: 'Elcano'
+            },
             buyer: {
-                name: 'Sebastian Zuviria',
-                email: 'seba@email.com',
-                phone: '123456789',
-                address: 'direccion 12345',
-                comment: 'comentario'
+                 actuser
             },
             items: cart,
             total: getTotal()
@@ -60,32 +63,41 @@ const Cart = () => {
                 batch.commit()
                 clearCart()
                 //console.log('El id de la orden es:' `${id}`)
-                //setNotification('success',`El id de la orden es: ${id}`)
+                Swal.fire('Transaccion Aceptada',`El id de la orden es: ${id}`,'success')
             }).catch(error => {
                 console.log(error)
-            //    setNotification('error',`Algunos productos no tienen stock`)
+            Swal.fire('error','Algunos productos no tienen stock','error')
             }).finally(() => {
                 setLoading(false)
             })
     }
     
     if(loading) {
-        return <h1>Generando orden...</h1>
+        return <div className='container-fluid'> 
+            <h1 className='text-light fw-bolder '>Generando orden...<Spinner/> </h1>
+            </div> 
+        
+        
     }
 
-    if(getQuantity() === 0) {
+    if (getQuantity() === 0) {
         return (
-            <h1>No hay items en el carrito</h1>
+            <div className='container bg-blue-900 justify-content-center '>
+                <h1 className='text-light'>No hay items en el carrito</h1>
+            </div>
+
         )
     }
 
     return (     
-        <div>
-            <h1>Cart</h1>
+        <div className='mb-5'>
+            <h1>Mi carrito</h1>
             { cart.map(p => <CartItem key={p.id} {...p}/>) }
             <h3>Total: ${getTotal()}</h3>
-            <button onClick={() => clearCart()} className="Button">Limpiar carrito</button>
-            <button className="Button" onClick={createOrder}>Generar Orden</button>
+            <btn className="btn btn-secondary mx-2" onClick={() => clearCart()} >Limpiar carrito</btn>
+            <btn className="btn btn-secondary" onClick={createOrder  } >Generar Orden</btn>
+            
+          
         </div>
     )
 }
