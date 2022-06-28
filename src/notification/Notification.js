@@ -1,5 +1,16 @@
 import { useState, createContext, useContext } from "react";
 
+import swal from 'sweetalert'
+
+const SwalNotification = ({swaltitle,swallmessage, swalseverity}) => {
+  swal({
+    title : swaltitle,
+    text  : swallmessage,
+    icon  : swalseverity,
+    button: "Accept"
+})
+}
+
 const Notification = ({ message, severity }) => {
 
     const notificationStyles = {

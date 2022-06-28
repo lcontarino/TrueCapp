@@ -37,7 +37,7 @@ const ItemListContainer = ({ greeting }) => {
     }
 
     return(
-        <div className='ItemListContainer'>
+        <div className='mb-5 mt-5'>
             <h1>{ greeting }</h1>
             { 
                 products.length > 0 

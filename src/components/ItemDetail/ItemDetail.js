@@ -5,7 +5,7 @@ import ItemCount from '../ItemCount/ItemCount'
 import CartContext from '../../context/CartContext'
 import { useNotification } from '../../notification/Notification'
 
-const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
+const ItemDetail = ({ id, name, img, category, description,shortdesc, price, stock }) => {
     const [quantity, setQuantity] = useState(0)
 
     //const { setNotification } = useNotification()
@@ -21,13 +21,13 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
 
     return (
         <div className="ItemDetailContainer">
-            <div className='row'>
+            <div className='row pt-2  mb-1 pb-2 px-2 mx-0 bg-white w-100 text-center'>
                 <div className='col-md-6'>
                 <div className='img-fluid'>
                 <img src={img} alt={name} className="ItemImg"/>
             </div>
                 </div>
-                <div className='col-md-6'>
+                <div className='col-md-6 border border-1 border-secondary rounded-3 pb-2'>
             <header className="Header">
                 <h2 className="ItemHeader">
                     {name}
@@ -39,19 +39,29 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
                     Categoria: {category}
                 </p>
                 <p className="Info">
-                    Descripción: {description}
+                    Descripción: {shortdesc}
                 </p>
                 <p className="Info">
                     Precio: {price}
                 </p>
+                <p className="Info">
+                    Stock: {stock}
+                </p>
             </section>  
-            <div className='counterWrapper  bg-indigo-900 p-2'>
+            <section className='desc-footer   p-2'>
                 { quantity > 0  
-                    ? <Link to='/cart' className='Option'>Finalizar compra</Link> 
+                    ? <Link to='/cart' className='btn btn-primary'>Finalizar compra</Link> 
                     : <ItemCount stock={stock} onAdd={handleOnAdd} initial={getProduct(id)?.quantity}/>}               
-            </div> 
+            </section> 
+
+           
             </div>        
-            
+            <section className='descriptionWrapper mt-2 rounded border-1 border'>
+                <h1>{name}</h1>
+            <p className="Info">
+                     {description}
+                </p>
+            </section>
         </div>
         </div>
     )

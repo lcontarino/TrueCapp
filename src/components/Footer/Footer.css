@@ -7,6 +7,20 @@
 .footerRow{
     max-width: 100%;
 }
+.footer_box_desc{
+    
+    margin:auto;
+}
+.footer-10 {
+    background: #222222;
+    padding: 0 0 4em 0;
+    height: 350px;
+}
+
+.footer-header{
+    margin-left: 50px;
+    color: white;
+}
 
 h2 {
     color: #4b4b4b;
@@ -20,6 +34,7 @@ h2 {
         font-size: 15px;
         line-height: 1.2;
         margin: 4px 0 10px;
+        max-width: 70%;
     }
 
      a {
@@ -29,7 +44,19 @@ h2 {
     }
 
     .credit-card-icon{
-        color: white;
+        color: rgb(27, 26, 26);
+        width: 50px;
+        height: 50px;
+    }
+
+    .box_icon{
+        color: rgb(100, 100, 100);
+        width: 50px;
+        height: 50px;
+    }
+
+    .watchdog_icon{
+        color: rgb(219, 216, 216);
         width: 50px;
         height: 50px;
     }
@@ -39,4 +66,15 @@ h2 {
     }
     .con-info {
         display:flex
+    }
+
+    .w-100{
+        min-width: 100%;
+    }
+    .w-auto{
+       max-width: 33%;
+    }
+
+    .suscriber-Wrapper{
+        margin-left: 50px;
     }
