@@ -1,17 +1,18 @@
 import CartWidget from "../CartWidget/CartWidget";
 import './NavBar.css';
 import { Link } from "react-router-dom";
-import React from 'react'
+import React, {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import {auth} from '../../services/firebase'
 import {getAuth, signOut} from 'firebase/auth'
 
 export const NavBar = () => {
-  const SignOutUser = (e) => {
-    //e.preventDefault()
+  const [user, setUser] = useState('')
+  const SignOutUser = () => {
+    auth.signOut(auth.currentUser)
    
-  //  console.log('{auth.currentUser.email}')
+  console.log(auth.currentUser.email)
 
     }
   return (
@@ -31,30 +32,25 @@ export const NavBar = () => {
               </a>
               
               <ul className="dropdown-menu dropdown-menu-dark mt-2" aria-labelledby="navbarDarkDropdownMenuLink">
-                <ul className='submenu dropdown-menu'>Instrumentos Musicales
-                <li><a className="dropdown-item" >Submenu item 1</a></li>
-            <li><a className="dropdown-item" >Submenu item 2</a></li>
-            </ul>
+
                 <li>
-                  <a className="submenu dropdown-menu" >Instrumentos Musicales</a>
-                  <ul>
-                    
-                    </ul>
-                    </li>
-                <li>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item">
                     <Link to='/category/controllers'>Controllers</Link>
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    <Link to='/category/synths'>Sintetizadores</Link>
+                  <a className="dropdown-item">
+                  <Link to='/category/synths'>Sintetizadores</Link>
                   </a>
                 </li>
-                <li><a className="dropdown-item">
+                <li>
+                  <a className="dropdown-item">
                   <Link to='/category/shoes'>Shoes</Link>
-                </a></li>
-                <li><a className="dropdown-item" >Cars</a></li>
+                </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" >Cars</a>
+                </li>
 
               </ul>
 
@@ -67,11 +63,11 @@ export const NavBar = () => {
       </div>
       <div className='login_icon_wrapper'>
         <FontAwesomeIcon icon={faUserCircle} className="user_login_icon" />
-        if (auth.currentUser.email){
+        
          <Link to='/login'>Login</Link> 
-        }
-         else
-          <p onClick={SignOutUser}>SignOut</p>}
+       
+         
+          <p onClick={SignOutUser}>SignOut</p>
       
 
       {/* <p>{auth.currentUser.email}</p> */}

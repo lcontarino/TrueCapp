@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { getAuth,createUserWithEmailAndPassword} from 'firebase/auth'
 import { auth } from '../../services/firebase'
-import {  addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
+import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
 import { db } from '../../services/firebase'
 import Swal from 'sweetalert2'
 
@@ -12,7 +12,9 @@ export const RegisterUsers = () => {
     const [address, setAddress] = useState('')
     const [idnumber, setIdnumber] = useState('')
 
-    const actuser = auth.currentUser.email
+    const [actuser,setUser] = useState('')
+
+    
     const dbUser = collection(db, 'users')
     console.log('Usuario Actual: ' + actuser)
 
@@ -98,4 +100,5 @@ export const RegisterUsers = () => {
 
             
     )
+    
 }
