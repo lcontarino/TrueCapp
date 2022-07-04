@@ -22,7 +22,7 @@ const ItemCount = ({ stock = 0, initial = 1, onAdd }) => {
     }
 
     return (
-        <div className='bg-indigo-900 w-100 p-2'>
+        <div className='w-100 p-2'>
             <div className='counterWrapper'>
             <button
                 className=" btn counterElement align-items-center justify-content-center"

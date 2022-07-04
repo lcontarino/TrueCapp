@@ -1,14 +1,16 @@
 .counterWrapper{
     display: flex;
     flex-direction: row;
+    float: left;
     justify-content: space-between;
     width: 200px;
-    background-color: red;
+    
 }
 
 .cardExplore-btn{
-   
-    
+   float: right;
+   height: 50px;
+    background-color: lime;
 }
 
 .fa-circle-plus{

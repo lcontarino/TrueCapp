@@ -153,12 +153,12 @@
 }
 
 .combo-action{
-    background-color: #c6ff00;
+    background-color: lime;
     color: #282828;
     font-size: .7em;
 }
 .combo-action:hover{
-    background-color: #efefef
+    background-color: limegreen
 }
 
 .fa-star{

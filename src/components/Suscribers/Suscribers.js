@@ -1,13 +1,16 @@
 import React,{ useState } from 'react'
 import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
-import { db, collectionsName } from '../../services/firebase'
+import { db  } from '../../services/firebase'
 import Swal from 'sweetalert2'
+import { auth } from '../../services/firebase'
 
 
 export const Suscribers = () => {
 
     //Variables de Estado.
     const [email, setEmail] = useState('')
+    const dbUser = collection(db, 'suscribers')
+    const dbMail = collection(db, 'triggerEmail')
 
     const Suscribe = (e) => {
         e.preventDefault();
@@ -16,13 +19,11 @@ export const Suscribers = () => {
           email: email,
           sus_state: 1
         }
-        const dbUser = collection(db, 'suscribers')
-        const dbMail = collection(db, 'suscribersEmail')
-    
+
         const emailContent = {
           to: email,
           message: {
-            subject: 'Hello from Firebase!',
+            subject: 'Gracias por suscribirte',
             text: 'This is the plaintext section of the email body.',
             html: 'This is the <code>HTML</code> section of the email body.',
           }
@@ -30,7 +31,7 @@ export const Suscribers = () => {
         }
     
     
-        if (dbUser === 'lcontarino@gmail.com') {
+        if (dbUser === email) {
           Swal.fire('Ya estas Suscripto')
     
         }

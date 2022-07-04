@@ -7,14 +7,13 @@ import Swal from 'sweetalert2'
 
 
 export const RegisterUsers = () => {
-    const batch = writeBatch(db)
-
+    
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const [address, setAddress] = useState('')
     const [idnumber, setIdnumber] = useState('')
 
-    const [actuser,setactUser] = useState('')
+    const [actuser,setUser] = useState('')
 
     
     const dbUser = collection(db, 'users')
@@ -24,22 +23,26 @@ export const RegisterUsers = () => {
         e.preventDefault();
         
       
+            if(actuser === email){
+                Swal.fire('Ya te encuentras registrado')
+            }
+            else{
                 createUserWithEmailAndPassword(auth, email, pass)
                 .then(auth => console.log(auth))
                 .catch(error => alert(error))
-                if(auth.currentUser.email != null){
+                
+                const batch = db.batch();
+                
                 const objNewUser = {
-                    uid : auth.currentUser.uid,
+                    uId : auth.currentUser.uid,
                     addres: address,
                     idnumber:idnumber
                 }
-               
+    
                 addDoc(dbUser, objNewUser)
-               }
-                
                 
                 Swal.fire('Registro Finalizado')
-            
+            }
     }
     
     

@@ -1,22 +1,30 @@
 import CartWidget from "../CartWidget/CartWidget";
 import './NavBar.css';
 import { Link } from "react-router-dom";
-import React, {useState} from 'react'
+import React, { useState,useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
-import {auth} from '../../services/firebase'
-import {getAuth, signOut} from 'firebase/auth'
+import { faLongArrowAltUp, faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { auth } from '../../services/firebase'
+import { getAuth, signOut } from 'firebase/auth'
+import { LoginUsers } from "../Login/Login";
+
 
 export const NavBar = () => {
-  const [user, setUser] = useState('')
-  const SignOutUser = () => {
-    auth.signOut(auth.currentUser)
-   
-  console.log(auth.currentUser.email)
+  const [actUser, setactUser] = useState('')
+  const logout = ()=>{
+    signOut(auth);
+    
+  }
+  
+  useEffect(() => {
+    auth.onAuthStateChanged((firebaseUser) => {
+       // console.log("Estas Logueado con: ", firebaseUser);
+        setactUser(firebaseUser.email)
+    });
+  },[]);
 
-    }
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-indigo-900">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-gray-900">
       <div className="container-fluid">
         <a className="navbar-brand">
           <Link to='/'><h3>TrueCapp</h3></Link>
@@ -30,7 +38,7 @@ export const NavBar = () => {
               <a className="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 categorias
               </a>
-              
+
               <ul className="dropdown-menu dropdown-menu-dark mt-2" aria-labelledby="navbarDarkDropdownMenuLink">
 
                 <li>
@@ -40,13 +48,13 @@ export const NavBar = () => {
                 </li>
                 <li>
                   <a className="dropdown-item">
-                  <Link to='/category/synths'>Sintetizadores</Link>
+                    <Link to='/category/synths'>Sintetizadores</Link>
                   </a>
                 </li>
                 <li>
                   <a className="dropdown-item">
-                  <Link to='/category/shoes'>Shoes</Link>
-                </a>
+                    <Link to='/category/shoes'>Shoes</Link>
+                  </a>
                 </li>
                 <li>
                   <a className="dropdown-item" >Cars</a>
@@ -63,16 +71,16 @@ export const NavBar = () => {
       </div>
       <div className='login_icon_wrapper'>
         <FontAwesomeIcon icon={faUserCircle} className="user_login_icon" />
+        { actUser ?
+        <div className="float-start"><p>{actUser}</p>
+        <p onClick={()=> (logout(), setactUser(!actUser))}>logout</p>
+        </div>
         
-         <Link to='/login'>Login</Link> 
-       
-         
-          <p onClick={SignOutUser}>SignOut</p>
-      
+        : 
+        <Link to='/login'><p>Login</p></Link>}
+            
+           
 
-      {/* <p>{auth.currentUser.email}</p> */}
-     {/* { auth.currentUser.email} */}
-        
       </div>
       <CartWidget />
     </nav>
