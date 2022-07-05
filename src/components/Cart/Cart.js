@@ -25,13 +25,7 @@ const Cart = () => {
     //     )
     // })}
 
-    useEffect(() => {
-        getDoc(doc(db, 'users',auth.currentUser.uid)).then(response => {
-            console.log(response)
-        })
-        
-        
-    }, []);
+    
 
 
     useEffect(() => {
