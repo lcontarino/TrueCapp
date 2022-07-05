@@ -1,0 +1,13 @@
+.image{
+    height: 600px;
+}
+
+.carousel{
+    display: flex;
+    justify-content: center;
+}
+
+.carousel .slide {
+    height: 50vh;
+    width: 100%;
+}

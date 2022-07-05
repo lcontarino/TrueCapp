@@ -75,6 +75,7 @@ export const LoginUsers = (props) => {
                                         ¿No tienes cuenta?
                                     </div>
                                     <div className='col-md-5 register-btn btn btn-info mt-2'>
+
                                         <Link to='/register/'><h6>Registrate</h6></Link>
                                     </div>
                                 </div>

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
+
+.login-body{
+    
+    padding: 30px;
+    margin-top: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    border-top-left-radius : 50px;
+    border-bottom-right-radius: 50px;
+    z-index: 100;
+    max-width:350px;
+    height: 400px;
+    background-color: rgb(27, 27, 27);
+}
+.body-bg{
+    opacity: 30%;
+    background-color: rgb(27, 27, 27);
+}
+.login-btn {
+    width: 100%;
+}
+
+.register-btn{
+    float:right;
+}
+.login-footer{
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+}
+h2{
+    width: 100%;
+    font-family: 'Titillium Web', sans-serif;
+
+}
+h6 {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+    color:black;
+}

@@ -2,9 +2,10 @@ import './ItemListContainer.css'
 import { useState, useEffect } from 'react'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
-
 import { getDocs, collection, query, where} from 'firebase/firestore'
 import { db } from '../../services/firebase'
+import {SlideShow} from '../SlideShow/SlideShow'
+
 
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([])
@@ -33,11 +34,14 @@ const ItemListContainer = ({ greeting }) => {
 
 
     if(loading) {
-        return <h1>Loading...</h1>
+        return <div className="container"><h1 className="text-light">Loading...</h1></div>
     }
 
     return(
         <div className='mb-5 mt-5'>
+            <div className="container">
+            <SlideShow/>
+            </div>
             <h1>{ greeting }</h1>
             { 
                 products.length > 0 

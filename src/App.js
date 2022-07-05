@@ -8,11 +8,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartContextProvider } from './context/CartContext';
 import { RegisterUsers } from './components/RegisterUsers/RegisterUsers';
 import { LoginUsers } from './components/Login/Login';
-import {SlideShow} from './components/SlideShow/SlideShow'
+import { SlideShow } from './components/SlideShow/SlideShow';
 
 const App = () => {
   return (
     <div className="App">
+
       <CartContextProvider>
         <BrowserRouter>
           <NavBar />
@@ -29,6 +30,7 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       </CartContextProvider>
+      
       <Footer/>
     </div>
   );

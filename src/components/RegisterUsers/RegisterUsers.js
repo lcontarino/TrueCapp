@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { getAuth,createUserWithEmailAndPassword} from 'firebase/auth'
+import React, { useState, useEffect } from 'react'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../services/firebase'
-import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
+import { addDoc, collection, writeBatch } from 'firebase/firestore'
 import { db } from '../../services/firebase'
 import Swal from 'sweetalert2'
 
@@ -13,49 +13,52 @@ export const RegisterUsers = () => {
     const [pass, setPass] = useState('')
     const [address, setAddress] = useState('')
     const [idnumber, setIdnumber] = useState('')
-
-    const [actuser,setactUser] = useState('')
-
-    
+    const [actUser, setactUser] = useState('')
     const dbUser = collection(db, 'users')
-    console.log('Usuario Actual: ' + actuser)
+
 
     const RegisterUser = (e) => {
         e.preventDefault();
-        
-      
-                createUserWithEmailAndPassword(auth, email, pass)
-                .then(auth => console.log(auth))
-                .catch(error => alert(error))
-                if(auth.currentUser.email != null){
-                const objNewUser = {
-                    uid : auth.currentUser.uid,
-                    addres: address,
-                    idnumber:idnumber
-                }
-               
-                addDoc(dbUser, objNewUser)
-               }
-                
-                
-                Swal.fire('Registro Finalizado')
-            
-    }
-    
-    
-    
-    return (
-        
-        
-            <div className='container-fluid bg-blue-100 p-0 '>
 
-                <div className='row pt-2 pb-2'>
-                    <div className='col-xl-6 col-md-6'>
-                        <h1>Registrate</h1>
-                        <img className='img-fluid' src='https://quicklaunch.io/wp-content/uploads/2019/10/user-registration.png'></img>
-                    </div>
-                    <div className='col-xl-6 col-md-6 bg-indigo-900'>
-                        <form onSubmit={RegisterUser}>
+
+        createUserWithEmailAndPassword(auth, email, pass)
+            .then(auth => Swal.fire('Registro Finalizado'))
+            .catch(error => alert(error))
+
+        const objNewUser = {
+            uid: auth.currentUser.uid,
+            addres: address,
+            idnumber: idnumber,
+            email: auth.currentUser.email
+        }
+
+        addDoc(dbUser, objNewUser)
+    }
+
+
+    useEffect(() => {
+        auth.onAuthStateChanged((firebaseUser) => {
+
+            setactUser(!actUser)
+        });
+    }, []);
+
+    return (
+
+
+
+        <div className='container-fluid bg-blue-100 p-0 '>
+
+            <div className='row pt-2 pb-2'>
+                <div className='col-xl-6 col-md-6'>
+                    <h1>Registrate</h1>
+                    <img className='img-fluid' src='https://quicklaunch.io/wp-content/uploads/2019/10/user-registration.png'></img>
+                </div>
+
+                <div className='col-xl-6 col-md-6 bg-indigo-900 '>
+                    <div className='row py-2 justify-content-center'>
+                    {actUser ?
+                        <form className="login-body" onSubmit={RegisterUser}>
                             <div className='mb-3'>
 
                                 <label className='form-label text-light fw-bold'>Email</label>
@@ -96,11 +99,14 @@ export const RegisterUsers = () => {
                                 <button type='submit' className='btn btn-info mt-2'>Register</button>
                             </div>
                         </form>
-                    </div>
+                        : <h1>Cierra sesion para crear una cuenta nueva</h1>
+                    }
                 </div>
             </div>
 
-            
+        </div>
+
+        </div>
     )
-    
+
 }
