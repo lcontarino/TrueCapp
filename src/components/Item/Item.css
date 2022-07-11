@@ -59,7 +59,7 @@
     
 }
 .cardInfoImg{
-    min-width: 220px;
+    min-width: auto;
     max-width: 200px;
     min-height: 130px;
     max-height: 130px;

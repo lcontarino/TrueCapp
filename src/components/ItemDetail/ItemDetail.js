@@ -27,14 +27,14 @@ const ItemDetail = ({ id, name, img, category, description,shortdesc, price, sto
                 <img src={img} alt={name} className="ItemImg"/>
             </div>
                 </div>
-                <div className='col-md-6 border border-1 border-secondary rounded-3 pb-2'>
+                <div className='mt-3 col-md-6 border border-1 border-secondary rounded-3 pb-2 h-50'>
             <header className="Header">
                 <h2 className="ItemHeader">
                     {name}
                 </h2>
             </header>
             
-            <section>
+            <section className='desc-body'>
                 <p className="Info">
                     Categoria: {category}
                 </p>
@@ -48,6 +48,9 @@ const ItemDetail = ({ id, name, img, category, description,shortdesc, price, sto
                     Stock: {stock}
                 </p>
             </section>  
+            <section>
+                <br></br>
+            </section>
             <section className='desc-footer   p-2'>
                 { quantity > 0  
                     ? <Link to='/cart' className='btn btn-primary'>Finalizar compra</Link> 

@@ -28,12 +28,13 @@ export const CartContextProvider = ({ children }) => {
     }
     
     const getQuantity = () => {
+        
         let accu = 0
         cart.forEach(prod => {
           accu += prod.quantity
         })
-    
         return accu
+        
     }
 
     const isInCart = (id) => {

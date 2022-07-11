@@ -8,7 +8,7 @@ const Item = ({ id, category, price, name, description, tag1, tag2, tag3, img })
 
          //Container for all products
        
-            <div className='row col-md-6 col-xl-3'>
+            <div className='col-md-6 col-xl-3'>
 
 
                 <div className='cardBody  col-md-4 bg-white'>

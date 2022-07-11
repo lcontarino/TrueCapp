@@ -7,7 +7,6 @@ import { addDoc, collection, getDocs, query, where, documentId, writeBatch, getD
 import { db, collectionsName, auth } from '../../services/firebase'
 import Swal from 'sweetalert2'
 import Spinner from '../Spinner/Spinner'
-import { parse } from '@fortawesome/fontawesome-svg-core'
 
 const Cart = () => {
     //Variables de Estado.
@@ -17,21 +16,10 @@ const Cart = () => {
     const dbUser = collection(db, 'users')
     const [user, setUser] = useState([])
 
-    // {user.map((user) => {
-    //     return (
-            
-    //         console.log("UserID: " + user.uid)
-            
-    //     )
-    // })}
-
-    
-
-
     useEffect(() => {
 
         auth.onAuthStateChanged((firebaseUser) => {
-            console.log("Estas Logueado con: ", firebaseUser);
+
             setactUser(firebaseUser)
         });
     }, []);
@@ -47,30 +35,37 @@ const Cart = () => {
     // }, []);
 
     const { cart, clearCart, getTotal, getQuantity } = useContext(CartContext)
-    
+    const [name, setName] = useState('')
+    const [surname, setSurname] = useState('')
+    const [adress, setAdress] = useState('')
+    const [adressNumber, setAdressNumber] = useState('')
+    const [phone, setPhone] = useState('')
     const createOrder = () => {
-        
-        console.log('crear orden')
-      
+
         setLoading(true)
         const orderMail = collection(db, 'triggerEmail')
-        
+        console.log(name)
+
         const objOrder = {
 
             sendAdress: {
-                buyerEmail: actUser.email
+                adress: adress,
+                adressNumber: adressNumber,
+
             },
-            // sendAdress: {
-            //     adress1: ''
-            // },
-            // buyer: {
-            //    email: actUser.email,
-            //    idNumber: ''
-            // },
+
+            buyer: {
+                name: name,
+                surname: surname,
+                buyerEmail: actUser.email,
+                phone: phone
+
+            },
 
             items: cart,
             total: getTotal()
         }
+
 
         const ids = cart.map(prod => prod.id)
 
@@ -80,7 +75,7 @@ const Cart = () => {
 
         const collectionRef = collection(db, 'products')
 
-        
+
 
         getDocs(query(collectionRef, where(documentId(), 'in', ids)))
             .then(response => {
@@ -107,15 +102,14 @@ const Cart = () => {
                     to: [actUser.email],
                     message: {
                         subject: 'Tu compra en TrueCapp',
-                        text: 'Gracias por comprar en TrueCapp',
-                        html: 'Gracias por comprar en TrueCapp. El identificador de tu compra es: ' + id,
-                      }
+                        html: 'Gracias' + ' ' + name + ' ' + 'por comprar en TrueCapp' + '\n El identificador de tu compra es: ' + id + ' ' + 'El envio será despachado a: ' + ' ' + adress + ' ' + adressNumber,
+                    }
                 }
                 addDoc(orderMail, emailContent)
                 // addDoc(dbUser,objOrder)
                 batch.commit()
                 clearCart()
-                
+
                 Swal.fire('Transaccion Aceptada', `El id de la orden es: ${id} 
                             <br> Recibiras el detalle en tu correo: ${actUser.email}`, 'success')
 
@@ -126,37 +120,109 @@ const Cart = () => {
             }).finally(() => {
                 setLoading(false)
             })
-       
+
     }
-   
+
 
     if (loading) {
 
-        return <div className='container-fluid'>
-            <h1 className='text-light fw-bolder '>Generando orden...<Spinner /> </h1>
+        return <div className='container-fluid bg-gray-500'>
+            <div className='col-md-12'>
+                <h1 className='text-light'>Generando orden... <Spinner /> </h1></div>
+            <div></div>
 
         </div>
     }
 
     if (getQuantity() === 0) {
         return (
-            <div className='container bg-blue-900 justify-content-center '>
-                <h1 className='text-light'>No hay items en el carrito</h1>
+            <div className='row  mx-0 bg-gray-800 w-100 text-center'>
+                <div className='col-md-12'>
+                    <h1 className='text-light'>No hay items en el carrito</h1>
+                </div>
             </div>
 
         )
     }
 
+    if (actUser === null) {
+        return (
+            <div className='row  mx-0 bg-gray-800 w-100 text-center'>
+                <div className='col-md-12'>
+                    <h1 className='text-light'>Debe estar Logueado para finalizar la compra</h1>
+                </div>
+            </div>
+        )
+    }
+
+
     return (
         <div className='mb-5'>
-            <h1>Mi carrito</h1>
-            {cart.map(p => <CartItem key={p.id} {...p} />)}
-            <h3>Total: ${getTotal()}</h3>
-            <btn className="btn btn-secondary mx-2" onClick={() => clearCart()} >Limpiar carrito</btn>
-            <btn className="btn btn-secondary" onClick={createOrder}>Generar Orden</btn>
+            <div className='row  mx-0 bg-gray-800 w-100 text-center'>
+                <h1 className="text-light">Mi carrito</h1>
+            </div>
+            {(actUser ?
+                <div>
+                    {cart.map(p => <CartItem key={p.id} {...p} />)}
+                    <h3 className="mx-5 float-end mb-5">Total: ${getTotal()}</h3>
+
+                    <div className='row bg-blue-400 mt-5 py-2 w-100 justify-content-center'>
+                        <div className="rounded-start col-md-6 bg-gray-500 p-2 ">
+                            <h2> Detalle de envío</h2>
+                            <label className="label ">Nombre
+                            </label >
+                            <input className='form-control w-10'
+                                type="text"
+                                required
+                                placeholder="Ej: Luis"
+                                onChange={(e) => { setName(e.target.value) }} />
+
+                            <label className="label ">Apellido
+                            </label >
+                            <input className='form-control w-10'
+                                type="text"
+                                required
+                                placeholder="Ej: Gomez"
+                                onChange={(e) => { setSurname(e.target.value) }} />
+
+
+                            <label>Calle
+                            </label>
+                            <input className='form-control w-10'
+                                label=""
+                                placeholder="Ej: Av corrientes"
+                                onChange={(e) => { setAdress(e.target.value) }} />
+                            <label>Numero
+                            </label>
+                            <input className='form-control w-10'
+                                label=""
+                                placeholder="Ej: Av corrientes"
+                                onChange={(e) => { setAdressNumber(e.target.value) }} />
+                        </div>
+                    </div>
+                </div>
+                : <div>Ingrese un usuario para finalizar la compra</div>
+            )}
+
+            {(name === '' || adress === '' ?
+                <div>
+                    <button className="btn btn-secondary mx-2" onClick={() => clearCart()} >Limpiar carrito</button>
+                    <button className="btn btn-secondary  disabled ">Generar Orden</button>
+                </div>
+
+                :
+                <div>
+                    <button className="btn btn-secondary mx-2" onClick={() => clearCart()} >Limpiar carrito</button>
+                    <button className="btn btn-secondary" onClick={createOrder}>Generar Orden</button>
+                </div>
+
+            )}
+
 
 
         </div>
+
+
     )
 }
 

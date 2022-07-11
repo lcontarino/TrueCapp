@@ -48,6 +48,16 @@ export const NavBar = () => {
                 </li>
                 <li>
                   <a className="dropdown-item">
+                    <Link to='/category/phones'>Celulares</Link>
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item">
+                    <Link to='/category/tablets'>Tablets</Link>
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item">
                     <Link to='/category/synths'>Sintetizadores</Link>
                   </a>
                 </li>

@@ -51,7 +51,7 @@ export const RegisterUsers = () => {
 
             <div className='row pt-2 pb-2'>
                 <div className='col-xl-6 col-md-6'>
-                    <h1>Registrate</h1>
+                    
                     <img className='img-fluid' src='https://quicklaunch.io/wp-content/uploads/2019/10/user-registration.png'></img>
                 </div>
 

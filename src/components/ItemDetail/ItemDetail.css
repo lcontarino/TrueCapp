@@ -96,14 +96,19 @@
         padding: 5px;
         text-decoration: none;
     }
-
+    .desc-body{
+height: auto;
+    }
     .desc-footer{
+        
+       display: flex;
+        bottom: -170px;
         border:1px solid black;
         background-color: #1a202c;
-        display: flex;
+        
         flex-direction: row;
         justify-items: center;
-        min-width: 100%;
+        max-width: 100%;
     }
 h1{
     font-family: 'Titillium Web', sans-serif;
